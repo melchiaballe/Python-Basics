@@ -1,0 +1,115 @@
+print ("Decision Making")
+
+# Arithmetic Operators
+def addition(a,b):
+	print ("1: add function")
+	print (a ," + ", b)
+	return a + b
+
+def subtraction(a,b):
+	print ("2: subraction function")
+	print (a ," - ", b)
+	return a - b
+
+# Comparison Operators
+def doubleEqual(a,b):
+	print ("3: == operator")
+	print (a , " == ", b)
+	return a == b
+
+def notEqual(a,b):
+	print ("4: != operator")
+	print (a ," != ", b)
+	return a != b
+
+#Assignment Operators
+def addAnd(a,b):
+	print ("5: add AND function")
+	print ("Call addition function and bind to int c")
+	c = addition(a,b)
+	print ("Output: ", c)
+	print ("int c +=",a)
+	c += a
+	return c
+
+def subtractAnd(a,b):
+	print ("6: subtract AND function")
+	print ("Call subraction function and bind to int c")
+	c = subtraction(a,b)
+	print ("Output: ", c)
+	print ("int c -=",a)
+	c -= a
+	return c
+
+#Bitwise Operators
+def bitwiseAnd(a,b):
+	print ("7: bitwise & operator")
+	print (a, " & ", b)
+	return a & b
+
+def bitwiseOr(a,b):
+	print ("8: bitwise | operator")
+	print (a, " | ", b)
+	return a | b
+
+#Logical Operators
+def logicalAnd(a,b):
+	print ("9: logical operator AND")
+	print (a, " AND ", b)
+	return a and b
+
+def logicalOr(a,b):
+	print ("10: logical operator OR")
+	print (a, " OR ", b)
+	return a or b
+
+#Membership Operators
+def existIn(a,b):
+	print ("11: membership operators in")
+	print (a, " in " , b)
+	return a in b
+
+def existNotIn(a,b):
+	print ("12: membership operators not in")
+	print (a, " not in " , b)
+	return a not in b
+
+#Identity Operators
+def existIs(a,b):
+	print ("13: Identity Operator is")
+	print (a, " is ", b)
+	return a is b
+
+def existIsNot(a,b):
+	print ("14: Identity Operator is")
+	print (a, " is not ", b)
+	return a is not b
+
+
+print ("Output: ", addition(10,20))
+print (" ")
+print ("Output: ", subtraction(10,20))
+print (" ")
+print ("Output: ", doubleEqual(10,20))
+print (" ")
+print ("Output: ", notEqual(10,20))
+print (" ")
+print ("Output: ", addAnd(10,20))
+print (" ")
+print ("Output: ", subtractAnd(10,20))
+print (" ")
+print ("Output: ", bitwiseAnd(60,13))
+print (" ")
+print ("Output: ", bitwiseOr(60,13))
+print (" ")
+print ("Output: ", logicalAnd(True, False))
+print (" ")
+print ("Output: ", logicalOr(True, False))
+print (" ")
+print ("Output: ", existIn(5, [1,2,3,4,5]))
+print (" ")
+print ("Output: ", existNotIn(5, [1,2,3,4,5]))
+print (" ")
+print ("Output: ", existIs(5, 5))
+print (" ")
+print ("Output: ", existIsNot(5, 5))

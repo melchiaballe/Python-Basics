@@ -1,0 +1,67 @@
+class Compute:
+	'Computes the sum of 3 variables'
+
+	def __init__ (self, a, b, c):
+		self.a = a
+		self.b = b
+		self.c = c
+
+	def totalValue(self):
+		total = self.a + self.b + self.c
+		print (total)
+
+	def printValue(self):
+		print ("Values = %d + %d + %d" %(self.a ,self.b ,self.c))
+
+comp = Compute(1,2,3)
+comp1 = Compute(12,34,55)
+comp.printValue()
+comp.totalValue()
+comp1.printValue()
+comp1.totalValue()
+
+print(" ")
+print(" ")
+
+class Student:
+	'initializes a student property'
+	def __init__(self, affiliation, name, year, section):
+		self.name = name
+		self.year = year
+		self.section = section
+		self.affiliation = affiliation
+
+	def printStudentDetails(self):
+		if self.affiliation is None:
+			print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section)
+		else:			
+			print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation)
+
+stud1 = Student(None, "Mimi", "4th Yr", "A")
+stud1.printStudentDetails()
+
+print(" ")
+print(" ")
+
+class Athlete(Student):
+	def __init__(self, sport, affiliation, name, year, section):
+		self.sport = sport
+		super().__init__(affiliation, name, year, section)
+		
+	def printAthleteAffiliationType(self):
+		print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation, "\nSport:", self.sport)
+
+class Scholar(Student):
+	def __init__(self, aveGPA, affiliation, name, year, section):
+		self.aveGPA = aveGPA
+		super().__init__(affiliation, name, year, section)
+
+	def printScholarAffiliationType(self):
+		print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation, "\naveGPA:", self.aveGPA)
+
+
+stud2 = Athlete("Badminton","Sports", "Momo", "4th Yr", "Abacus")
+stud2.printStudentDetails()
+print(" ")
+print(" ")
+stud2.printAthleteAffiliationType()

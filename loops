@@ -1,0 +1,90 @@
+print ("Loops")
+
+#While Loop
+def incrementWhileLoop (a):
+	print ("While Loop increment values")
+	print ("Condition while a != b = (a + 5)")
+	b = a + 5
+	while (a != b):
+		print (a)
+		a += 1
+
+def decrementWhileLoop (a):
+	print ("While Loop decrement values")
+	print ("Condition while a != b = (a - 5)")
+	b = a - 5
+	while (a != b):
+		print(a)
+		a -= 1
+
+def incrementWhileLoopBreak (a):
+	print ("While Loop with break")
+	print ("Condition if value is = 3 statement will break")
+	b = a + 5
+	while (a != b):
+		print(a)
+		if ( a == 3):
+			break
+		a += 1
+
+#For Loop
+def incrementForLoop (a):
+	print ("For Loop increment values")
+	for i in range(0, a):
+		print(i)
+
+def byCharacterForLoop (a):
+	print ("For Loop print string characters")
+	for i in a:
+		print(i)
+
+def incrementForLoopContinue (a):
+	print ("For Loop increment values")
+	for i in range(0, a):
+		if (i == 3):
+			continue
+		print(i)
+
+#Nested While loop
+def nestedWhileLoop(a, b):
+	print ("Nested While Loop")
+	while (a != 5):
+		print(a)
+		while ( b < 5):
+			print ( a * 2 )
+			b += 1
+		a += 1
+		b = 4
+
+def nestedForLoop(a):
+	print ("Nested For Loop Right Triangle")
+	for length in range(0,a):
+		for width in range(0,length):
+			print ("*", end = '')
+		print ('')
+		
+def nestedForLoop2(a):
+	print ("Nested For Loop Opposite Right Triangle")
+	for length in range(a, 0, -1):
+		for width in range(length, 0, -1):
+			print ("*", end = '')
+		print ('')
+
+def nestedForLoop3(a):
+	print ("Nested loop multiply first iteration and second iteration")
+	for length in range(0,a):
+		for width in range(0,length):
+			print (length ," * ", width)
+			print (length * width)
+
+incrementWhileLoop(0)
+decrementWhileLoop(5)
+incrementWhileLoopBreak(0)
+incrementForLoop(5)
+byCharacterForLoop("HelloWorld")
+incrementForLoopContinue(5)
+nestedWhileLoop(0,4)
+nestedForLoop(5)
+nestedForLoop2(5)
+nestedForLoop3(5)
+

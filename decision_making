@@ -1,0 +1,97 @@
+print ("Decision Making")
+
+def returnEqual(a,b):
+	print(a ," = ", b)
+	if (a == b):
+		return a ," and ", b ,"is equal"
+	else:
+		return a ," and ", b ,"is not equal"
+
+def returnNotEqual(a,b):
+	print(a ," != ", b)
+	if (a != b):
+		return a ," and ", b ,"is equal"
+	else:
+		return a ," and ", b ,"is not equal"
+
+def greaterThan(a,b):
+	print (a ," > ", b)
+	if (a > b):
+		return a, " is greater than ", b
+	else:
+		return a, " is not greater than ", b
+
+def lessThan(a,b):
+	print (a ," < ", b)
+	if (a < b):
+		return a, " is less than ", b
+	else:
+		return a, " is not less than ", b
+
+def greaterThanOrEqual(a,b):
+	print (a ," >= ", b)
+	if (a >= b):
+		if(a == b):
+			return a ,"is equal to", b
+		else:
+			return a ,"greater than", b
+	else:
+		return a ," is not greater than or equal to ", b
+
+def lessThanOrEqual(a,b):
+	print (a ," <= ", b)
+	if (a <= b):
+		if(a == b):
+			return a ,"is equal to", b
+		else:
+			return a ,"less than", b
+	else:
+		return a ," is not less than or equal to ", b
+
+def returnTrue(a):
+	print (a ," is true?")
+	if(a):
+		return "Value is True"
+	else:
+		return "Value is False"
+
+def returnFalse(a):
+	print (a ," is false?")
+	if(not a):
+		return "Value is False"
+	else:
+		return "Value is True"
+
+def returnNotIn(a,b):
+	print (a ," not in ", b ," ?")
+	if (a not in b):
+		return a ,"does not belong in list", b
+	else:
+		return a ,"belong in list", b
+
+def returnIs(a,b):
+	print (a ,"is operator", b ,"?")
+	if (a is b):
+		return a ,"is equal to", b
+	else:
+		return a ,"is not equal to", b
+
+print("Output: ", returnEqual(1,2))
+print(" ")
+print("Output: ", returnNotEqual(1,2))
+print(" ")
+print("Output: ", greaterThan(1,2))
+print(" ")
+print("Output: ", lessThan(1,2))
+print(" ")
+print("Output: ", greaterThanOrEqual(1,2))
+print(" ")
+print("Output: ", lessThanOrEqual(1,2))
+print(" ")
+print("Output: ", returnTrue(True))
+print(" ")
+print("Output: ", returnFalse(True))
+print(" ")
+print("Output: ", returnNotIn(2, [1,2,3,4,5]))
+print(" ")
+print("Output: ", returnIs(2,2))

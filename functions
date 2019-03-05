@@ -1,0 +1,85 @@
+def getUserNameAndAge():
+	name = input("Enter your name: ")
+	age = int(input("Enter your age: "))
+	ageAfterFiveYears = input("Do you want to know age in 5 years? (y/n)")
+	
+	print (" ")
+	if (ageAfterFiveYears == "y"):
+		printUserNameAndAgeFiveYears(name, age)
+	else:
+		printUserNameAndAge(name, age)
+
+def printUserNameAndAge(name, age):
+	print ("Hello", name ,"you are now", age ,"years old")
+	return
+
+def printUserNameAndAgeFiveYears(name, age):
+	print ("Hello", name ,"you are now", age ,"years old")
+	print ("Age after 5 years would be ", (int(age) + 5))
+	return
+
+def createRightTriangle():
+	a = int(input("Triangle Dimension: "))
+	for length in range(0,a):
+		for width in range(0,length):
+			print ("*", end = '')
+		print ('')
+	return
+
+def createOppositeRightTriangle():
+	a = int(input("Opposite Triangle Dimension: "))
+	for length in range(a, 0, -1):
+		for width in range(length, 0, -1):
+			print ("*", end = '')
+		print ('')
+	return
+
+def getCalculation():
+	checker = True
+
+	while (checker == True):
+		a = input("input arithmetic operator (+ ,- ,/ ,*)")
+		first = int(input("input first number: "))
+		second = int(input("input second number: "))
+		
+		if(a == "+"):
+			addFunc(first, second)
+		elif(a == "-"):
+			subtractFunc(first, second)
+		elif(a == "*"):
+			multiplicationFunc(first, second)
+		else:
+			divisionFunc(first, second)
+
+		cont = input("do you want to try again y/n: ")
+		if (cont == "n"):
+			checker = False
+	return
+
+
+def addFunc(first, second):
+	print (first ,"+", second)
+	print ("Output: ", first + second)
+	return
+
+def subtractFunc(first, second):
+	print (first ,"-", second)
+	print ("Output: ", first - second)
+	return
+
+def multiplicationFunc(first, second):
+	print (first ,"*", second)
+	print ("Output: ", first * second)
+	return
+
+def divisionFunc(first, second):
+	print (first ,"/", second)
+	print ("Output: ", first / second)
+	return
+	
+
+
+getUserNameAndAge()
+createRightTriangle()
+createOppositeRightTriangle()
+getCalculation()

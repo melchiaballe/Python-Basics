@@ -1,0 +1,71 @@
+def getTupleLength (tpl):
+	print ("Get tuple length")
+	print ("Tuple contains ", tpl)
+	return len(tpl)
+
+def getTupleMaxValue (tpl):
+	print ("Get max value in tuple")
+	print ("Tuple contains ", tpl)
+	return max(tpl)
+
+def getTupleMinValue (tpl):
+	print ("Get min value in tuple")
+	print ("Tuple contains ", tpl)
+	return min(tpl)
+
+def convertListToTuple (lst):
+	print ("Convert List ", lst ," into a tuple")
+	print ("List contains ", lst)
+	return tuple(lst)
+
+def concatTuple (tpl1, tpl2):
+	print ("Concat tuple ", tpl1 ," and tuple ", tpl2)
+	print ("first tuple contains ", tpl1)
+	print ("second tuple contains ", tpl2)
+	return tpl1 + tpl2
+
+def repetitionTuple (tpl, value):
+	print ("The tuple value would be repeated ", value ,"times")
+	print ("Tuple contains ", tpl)
+	return tpl * value
+
+def membershipInTuples (tpl, value):
+	print ("Checks wether ", value ," exist in tuple ", tpl)
+	return value in tpl
+
+def tupleValues (tpl):
+	print ("Print out all the values inside the tuple")
+	print ("tuple contains ", tpl)
+	for i in tpl:
+		print(i)
+
+def getSpecificTupleValues (tpl, index):
+	print ("This will output the value at index ", index)
+	print ("tuple contains ", tpl)
+	return tpl[index]
+
+def getRangeTupleValues (tpl, index):
+	print ("This will output the value from start until index ", index)
+	print ("tuple contains ", tpl)
+	return tpl[0:index]
+
+print("Output: ", getTupleLength((1,2,3,4,5,6)))
+print(" ")
+print("Output: ", getTupleMaxValue((90,100,3,4,5)))
+print(" ")
+print("Output: ", getTupleMinValue((1,4,6,8,0)))
+print(" ")
+print("Output: ", convertListToTuple(["hello","world","123","456"]))
+print(" ")
+print("Output: ", concatTuple((1,4,6,8,0), (90,100,3,4,5)))
+print(" ")
+print("Output: ", repetitionTuple((1,3,), 4))
+print(" ")
+print("Output: ", membershipInTuples((1,3,5,6), 4))
+print(" ")
+tupleValues((1,3,5,6))
+print(" ")
+print("Output: ", getSpecificTupleValues((1,3,5,6), 2))
+print(" ")
+print("Output: ", getRangeTupleValues((1,3,5,6), 2))
+print(" ")

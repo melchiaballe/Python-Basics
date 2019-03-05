@@ -1,0 +1,70 @@
+import time
+import calendar
+
+#TIME
+
+def getTicksSinceEpoch ():
+	print ("returns total ticks since epoch")
+	return time.time()
+
+def getFloatingPointTime ():
+	print ("returns CPU Time in floating point")
+	return time.clock()
+
+def getFormattedDateTime ():
+	print ("returns a formatted and readable format for date and time")
+	return time.ctime()
+
+#CALENDAR
+
+def returnMonthCalendar(year, month):
+	print ("Returns a calendar view of year ", year ," and month ", month)
+	return calendar.month(year, month)
+
+def returnFirstWeekDay():
+	print ("Returns the first day of the week in integer format")
+	return calendar.firstweekday()
+
+def isLeapYear (year):
+	print ("Returns wether the given year is a leap year")
+	return calendar.isleap(year)
+
+def isLeapYearRange (year1, year2):
+	print ("Returns the total number of leap days in the years within range ", year1 ," ", year2)
+	return calendar.leapdays(year1,year2)
+
+def getValuesListOfMonth(year, month):
+	print ("Returns the list form of the inputed year and month")
+	return calendar.monthcalendar(year, month)
+
+def getMonthRange (year, month):
+	print ("Returns two integers. The first one is the code of the weekday for the first day of the month month in year year; the second one is the number of days in the month. Weekday codes are 0 (Monday) to 6 (Sunday);")
+	return calendar.monthrange(year, month)
+
+def getYearCalendar(year):
+	print("Returns the calendar view of the given year")
+	return calendar.prcal(year)
+
+
+
+
+print (getTicksSinceEpoch())
+print (" ")
+print (getFloatingPointTime())
+print (" ")
+print (getFormattedDateTime())
+print (" ")
+print (returnMonthCalendar(2019,12))
+print (" ")
+print (returnFirstWeekDay())
+print (" ")
+print (isLeapYear(2019))
+print (" ")
+print (isLeapYearRange(2019,2022))
+print (" ")
+print (getValuesListOfMonth(2019,5))
+print (" ")
+print (getMonthRange(2019,5))
+print (" ")
+print (getYearCalendar(2019))
+

@@ -1,0 +1,65 @@
+def getSpecificValueInList(a, b):
+	print ("This list contains ", a ," get the value at index ", b)
+	return a[b]
+
+def getRangeValueInList(a , b):
+	print ("This list contains ", a ," get values from start upto index ", b)
+	return a[0:b]
+
+def updateListValues(lst, index, value):
+	print ("this list contains ", lst ," it will be altered at index ", index ," with value", value)
+	lst[index] = value
+	return lst
+
+def deleteListValue(lst, index):
+	print ("this list contains ", lst ," it will be altered at index ", index)
+	del lst[index]
+	return lst
+
+def memberOfList(lst, value):
+	print ("this list contains ", lst ," it will check if ", value ," exist within list")
+	return value in lst
+
+def getListLength(lst):
+	print ("this list contains ", lst ," this function would count all value within the list")
+	return len(lst)
+
+def addListMembers(lst, value):
+	print ("this list contains ", lst , " and would be appended with the list ", value)
+	return lst + value
+
+def getListValues(lst):
+	print ("this list contains ", lst , " and would be printed using a loop ")
+	for i in lst:
+		print (i)
+	return 
+
+def reverseList(lst):
+	print ("this list contains ", lst ," and it would be reversed")
+	lst.reverse()
+	return lst
+
+def getValueCount(lst, value):
+	print ("this list contains ", lst ," it would check the count of the appearance of ", value)
+	return lst.count(value)
+
+
+print ("Output: ", getSpecificValueInList(["hello","world","12","3fouuuuuur"], 2))
+print (" ")
+print ("Output: ", getRangeValueInList(["hello","world","12","3fouuuuuur"], 1))
+print (" ")
+print ("Output: ", updateListValues(["hello","world","12","3fouuuuuur"], 2, "ONETWO"))
+print (" ")
+print ("Output: ", deleteListValue(["hello","world","12","3fouuuuuur"], 2))
+print (" ")
+print ("Output: ", memberOfList(["hello","world","12","3fouuuuuur"], "hello"))
+print (" ")
+print ("Output: ", getListLength(["hello","world","12","3fouuuuuur"]))
+print (" ")
+print ("Output: ", addListMembers(["hello","world","12","3fouuuuuur"], ["098","765","432","123"]))
+print (" ")
+getListValues(["hello","world","12","3fouuuuuur"])
+print (" ")
+print ("Output: ", reverseList(["hello","world","12","3fouuuuuur"]))
+print (" ")
+print ("Output: ", getValueCount(["hello","world","hello","3fouuuuuur"], "hello"))

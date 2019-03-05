@@ -1,0 +1,80 @@
+def getDictionaryKeys (a):
+	print ("Get the keys of the dictionary")
+	print ("Dictionary contains ", a)
+	return a.keys()
+
+def getDictionaryValues (a):
+	print ("Get the values of the dictionary")
+	print ("Dictionary contains ", a)
+	return a.values()
+
+def returnDictionaryTuple (a):
+	print ("return tuple values from dictionary")
+	print ("Dictionary contains ", a)
+	return a.items()
+
+def clearDictionary (a):
+	print ("return a cleared dictionary")
+	print ("Dictionary contains ", a)
+	return a.clear()
+
+def concatDictionary (a, b):
+	print ("returns a concat between two dictionary")
+	print ("First dictionary contains ", a)
+	a.update(b)
+	return a
+
+def getStringDictionaryEquivalent (a):
+	print ("returns a string equivalent of the dictionary")
+	print ("Dictionary contains ", a)
+	return str(a)
+
+def getSpecificValueFromDictionary (a, key):
+	print ("returns the value on the specified key ", key)
+	print ("Dictionary contains ", a)
+	return a.get(key)
+
+def setDefaultforDict (a, defValue):
+	print ("returns the saved default value if field is empty")
+	print ("Dictionary contains ", a)
+	print ("Add new field named \'Origin\'")
+	return a.setdefault('Origin', defValue)
+
+def getDictionaryLength (a):
+	print ("returns dictionary length")
+	print ("Dictionary contains ", a)
+	return len(a)
+
+def returnDictionaryOfSquares (a):
+	print ("bind a value on a empty dictionary")
+	print ("Dictionary contains ", a)
+	for x in range(12):
+   		a[x] = x*x
+	return a
+
+
+dictionary = {'Name': 'Zara', 'Age': 7, 'Location': 'Davao'}
+
+
+
+print ("DICTIONARY")
+print ("Output: ", getDictionaryKeys(dictionary))
+print (" ")
+print ("Output: ", getDictionaryValues(dictionary))
+print (" ")
+print ("Output: ", returnDictionaryTuple(dictionary))
+print (" ")
+print ("Output: ", concatDictionary(dictionary, {'Birthdate': '12/07/2011'}))
+print (" ")
+print ("Output: ", getStringDictionaryEquivalent(dictionary))
+print (" ")
+print ("Output: ", getSpecificValueFromDictionary(dictionary, 'Name'))
+print (" ")
+print ("Output: ", setDefaultforDict(dictionary, 'Philippines'))
+print (" ")
+print ("Output: ", getDictionaryLength(dictionary))
+print (" ")
+print ("Output: ", clearDictionary(dictionary))
+print (" ")
+print ("Output: ", returnDictionaryOfSquares(dictionary))
+print (" ")

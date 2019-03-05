@@ -1,0 +1,60 @@
+def getStringCharLength(a):
+	print ("The Character length of ", a)
+	return len(a)
+
+def toLowerCase(a):
+	print ("Convert ", a ," to lower case")
+	return a.lower()
+
+def toUpperCase(a):
+	print ("Convert ", a ," to upper case")
+	return a.upper()
+
+def returnSpecificChar(a,b):
+	print ("Returns the first character until the ", b)
+	return a[0:b]
+
+def concatString(a,b):
+	print ("Returns the Concat of ", a ," and ", b)
+	return a + b
+
+def stringRepetition(a,b):
+	print ("The word ", a ," will be repeated ", b ," times")
+	return a * b
+
+def returnIfCharExist(a,b):
+	print ("Returns True if character ", a ,"does not exist in ", b)
+	return (a not in b)
+
+def returnRStrip(a):
+	print ("The word ", a ,"trailing white spaces would be removed")
+	return a.rstrip() + "REMOVEDSPACES"
+
+def returnSwapCase(a):
+	print ("invert the cases of the word ", a)
+	return a.swapcase()
+
+def returnStringIsDigit(a):
+	print ("Check whether string ", a ," contains only digit")
+	return a.isdigit()
+
+
+print ("Output: ", getStringCharLength("HelloWorld"))
+print (" ")
+print ("Output: ", toLowerCase("HELLOWORLD"))
+print (" ")
+print ("Output: ", toUpperCase("helloworld"))
+print (" ")
+print ("Output: ", returnSpecificChar("helloworld", 5))
+print (" ")
+print ("Output: ", concatString("helloworld", "123456"))
+print (" ")
+print ("Output: ", stringRepetition("helloworld", 2))
+print (" ")
+print ("Output: ", returnIfCharExist('a', "HelloWorld"))
+print (" ")
+print ("Output: ", returnRStrip("HelloWorld     "))
+print (" ")
+print ("Output: ", returnSwapCase("HeLlOWoRlD"))
+print (" ")
+print ("Output: ", returnStringIsDigit("hello1234"))
