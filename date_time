@@ -1,8 +1,11 @@
 import time
 import calendar
 
-#TIME
+print (" ")
+print ("DATE AND TIME FUNCTIONS")
+print (" ")
 
+#TIME
 def getTicksSinceEpoch ():
 	print ("returns total ticks since epoch")
 	return time.time()
@@ -45,26 +48,44 @@ def getYearCalendar(year):
 	print("Returns the calendar view of the given year")
 	return calendar.prcal(year)
 
+# REGION FUNCTIONS
+# -------------------------------------------------------------
 
+print ("Year and Month Values for functions")
+inpt1 = int(input ("Enter Valid Year: "))
+inpt2 = int(input ("Enter Month in numeric form: "))
+print (" ")
 
+print (returnMonthCalendar(inpt1,inpt2))
+print (" ")
+print (getValuesListOfMonth(inpt1,inpt2))
+print (" ")
+print (getMonthRange(inpt1,inpt2))
+print (" ")
 
+print ("Year Value for functions")
+inpt1 = int(input("Enter a valid Year: "))
+print (" ")
+
+print (isLeapYear(inpt1))
+print (" ")
+print (getYearCalendar(inpt1))
+print (" ")
+
+print ("Year Range Value for Leap Year Count")
+inpt1 = int(input ("Enter First Valid Year: "))
+inpt2 = int(input ("Enter Second Valid Year: "))
+print (isLeapYearRange(inpt1,inpt2))
+print (" ")
+
+print ("Show given functions for Date and Time")
+print (" ")
 print (getTicksSinceEpoch())
 print (" ")
 print (getFloatingPointTime())
 print (" ")
 print (getFormattedDateTime())
 print (" ")
-print (returnMonthCalendar(2019,12))
-print (" ")
 print (returnFirstWeekDay())
 print (" ")
-print (isLeapYear(2019))
-print (" ")
-print (isLeapYearRange(2019,2022))
-print (" ")
-print (getValuesListOfMonth(2019,5))
-print (" ")
-print (getMonthRange(2019,5))
-print (" ")
-print (getYearCalendar(2019))
 

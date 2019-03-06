@@ -1,3 +1,6 @@
+print (" ")
+print ("Classes")
+print (" ")
 class Compute:
 	'Computes the sum of 3 variables'
 
@@ -13,16 +16,6 @@ class Compute:
 	def printValue(self):
 		print ("Values = %d + %d + %d" %(self.a ,self.b ,self.c))
 
-comp = Compute(1,2,3)
-comp1 = Compute(12,34,55)
-comp.printValue()
-comp.totalValue()
-comp1.printValue()
-comp1.totalValue()
-
-print(" ")
-print(" ")
-
 class Student:
 	'initializes a student property'
 	def __init__(self, affiliation, name, year, section):
@@ -37,11 +30,6 @@ class Student:
 		else:			
 			print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation)
 
-stud1 = Student(None, "Mimi", "4th Yr", "A")
-stud1.printStudentDetails()
-
-print(" ")
-print(" ")
 
 class Athlete(Student):
 	def __init__(self, sport, affiliation, name, year, section):
@@ -62,25 +50,127 @@ class Scholar(Student):
 	def printScholarAffiliationType(self):
 		print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation, "\naveGPA:", self.aveGPA)
 
+# REGION FUNCTION
+# ----------------------------------------------------------
 
-stud2 = Athlete("Badminton","Sports", "Momo", "4th Yr", "Abacus")
-print("print parent class using child class Athlete")
-stud2.printStudentDetails()
-print(" ")
-print(" ")
-print("print child class Athlete details")
-stud2.printAthleteAffiliationType()
-print(" ")
-stud2.printSports();
-print(" ")
-print(" ")
-stud3 = Scholar("3.2","ESC Scholar", "Momo", "4th Yr", "Abacus")
-print("print child class Scholar details")
-stud3.printScholarAffiliationType()
-print(" ")
-print(" ")
-print("print parent class using child class Scholar")
-stud3.printStudentDetails()
+def checkYesNoValue(a):
+	if (a in ['y', 'Y', "Yes", "yes"]):
+		a = "y"
+	else:
+		a = "n"
+	return a
+
+def computeClass():
+	checker = True
+	print("Compute 3 numbers")
+
+	while (checker == True):
+		inpt1 = int(input("Enter First Number: "))
+		inpt2 = int(input("Enter Second Number: "))
+		inpt3 = int(input("Enter Third Number: "))	
+		
+		bindAndPrintComputeValues(inpt1, inpt2, inpt3)
+		cont = input("do you want to try again y/n: ")
+		cont = checkYesNoValue(cont)
+		if (cont == "n"):
+			checker = False
+		else:
+			print(" ")
+	return
+
+def bindAndPrintComputeValues(inpt1, inpt2, inpt3):		
+	comp = Compute(inpt1, inpt2, inpt3)
+	comp.printValue()
+	comp.totalValue()
+	
+	print(" ")
+	print(" ")
+	return
+
+def getStudent():
+	checker = True
+	print("Get Student Details")
+
+	while (checker == True):
+		inpt1 = input("Student Name: ")
+		inpt2 = input("Year Level: ")
+		inpt3 = input("Section: ")
+		inpt4 = input("With Affiliation? y/n: ")
+
+		inpt4 = checkYesNoValue(inpt4)
+		if (inpt4 == "n"):
+			bindAndPrintStudent(inpt1, inpt2, inpt3)
+		else:
+			inpt4 = getAffiliation()
+			inpt5 = getAffilOutput(inpt4)
+			
+			if(inpt4 == "Sports"):
+				bindAndPrintStudent(inpt1, inpt2, inpt3, inpt4, inpt5)
+			else:
+				bindAndPrintStudent(inpt1, inpt2, inpt3, inpt4, None, inpt5)
+		cont = input("add another student? y/n: ")
+		cont = checkYesNoValue(cont)
+		if (cont == "n"):
+			checker = False
+		else:
+			print(" ")
+
+def getAffiliation():
+	inpt1 = input("Enter Affiliation: (Athlete/Scholar) ")
+	inpt1 = checkAffilValue(inpt1)
+	return inpt1
+
+def checkAffilValue(a):
+	if (a in ['athlete', 'Athlete', 'sports', 'Sports']):
+		a = "Sports"
+	else:
+		a = "Scholar"
+	return a
+
+def getAffilOutput(inpt1):
+	if(inpt1 == "Sports"):
+		inpt1 = input("Enter Sports: ")
+	else:
+		inpt1 = input("Enter Ave GPA: ")
+	return inpt1
+
+def bindAndPrintStudent(stdntName, yrLvl, section, affiliation = None, sport = "", aveGPA = ""):
+	if (affiliation == None):
+		stud = Student(None, stdntName, yrLvl, section)
+		print(" ")		
+		stud.printStudentDetails()
+		print(" ")
+	elif(affiliation == "Sports"):
+		stud = Athlete(sport,affiliation, stdntName, yrLvl, section)
+		print(" ")
+		print("print parent class using child class Athlete")
+		stud.printStudentDetails()
+		print(" ")
+		print(" ")
+		print("print child class Athlete details")
+		stud.printAthleteAffiliationType()
+		print(" ")
+		stud.printSports();
+		print(" ")
+		print(" ")
+	else:
+		stud = Scholar(aveGPA,affiliation,stdntName,yrLvl,section)
+		print(" ")
+		print("print child class Scholar details")
+		stud.printScholarAffiliationType()
+		print(" ")
+		print(" ")
+		print("print parent class using child class Scholar")
+		stud.printStudentDetails()
+	return
+	
+
+# REGION FUNCTION CALLS
+# --------------------------------------------------------------
+
+computeClass()
+print (" ")
+getStudent()
 
 
 

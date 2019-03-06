@@ -1,3 +1,7 @@
+print ("")
+print ("DICTIONARY")
+print ("")
+
 def getDictionaryKeys (a):
 	print ("Get the keys of the dictionary")
 	print ("Dictionary contains ", a)
@@ -53,26 +57,55 @@ def returnDictionaryOfSquares (a):
 	return a
 
 
-dictionary = {'Name': 'Zara', 'Age': 7, 'Location': 'Davao'}
+# REGION FUNCTION CALLS
+# -----------------------------------------------------------------
 
+dictionary = {}
 
+dctlen = int(input("Length of Dictionary: "))
+for i in range(dctlen):
+	inpt1 = input("Dictionary Key: ")
+	inpt2 = input("Enter Value: ")
+	dictionary[inpt1] = inpt2
+print(" ")
 
-print ("DICTIONARY")
+print ("DICTIONARY given functions")
+print (" ")
 print ("Output: ", getDictionaryKeys(dictionary))
 print (" ")
 print ("Output: ", getDictionaryValues(dictionary))
 print (" ")
 print ("Output: ", returnDictionaryTuple(dictionary))
 print (" ")
-print ("Output: ", concatDictionary(dictionary, {'Birthdate': '12/07/2011'}))
-print (" ")
 print ("Output: ", getStringDictionaryEquivalent(dictionary))
 print (" ")
-print ("Output: ", getSpecificValueFromDictionary(dictionary, 'Name'))
-print (" ")
-print ("Output: ", setDefaultforDict(dictionary, 'Philippines'))
-print (" ")
 print ("Output: ", getDictionaryLength(dictionary))
+print (" ")
+
+print ("DICTIONARY get specific value function")
+inpt1 = input("Dictionary Key: ")
+print (" ")
+print ("Output: ", getSpecificValueFromDictionary(dictionary, inpt1))
+print (" ")
+
+print ("DICTIONARY add new field origin set a default value")
+inpt1 = input("Value of Origin: ")
+print (" ")
+print ("Output: ", setDefaultforDict(dictionary, inpt1))
+print (" ")
+
+print ("DICTIONARY concat another dictionary into existing")
+dictionary2 = {}
+dctlen = int(input("Length of Dictionary: "))
+for i in range(dctlen):
+	inpt1 = input("Dictionary Key: ")
+	inpt2 = input("Enter Value: ")
+	dictionary2[inpt1] = inpt2
+print (" ")
+print ("Output: ", concatDictionary(dictionary, dictionary2))
+print (" ")
+
+print ("Clear Dictionary and bind new values")
 print (" ")
 print ("Output: ", clearDictionary(dictionary))
 print (" ")

@@ -1,5 +1,6 @@
-print ("Decision Making")
-
+print (" ")
+print ("Basic Operators")
+print (" ")
 # Arithmetic Operators
 def addition(a,b):
 	print ("1: add function")
@@ -86,30 +87,89 @@ def existIsNot(a,b):
 	return a is not b
 
 
-print ("Output: ", addition(10,20))
+def checkInput(a):
+	if (a in ['true', 'True']):
+		a = True
+	else:
+		a = False
+
+	return a
+
+# REGION FUNCTION CALL
+# ---------------------------------------------
+
+# Arithmetic Operators
+print("For Arithmetic Functions")
+inpt1 = int(input("Enter first number: "))
+inpt2 = int(input("Enter second number: "))
+
+print ("Addition Output: ", addition(inpt1, inpt2))
 print (" ")
-print ("Output: ", subtraction(10,20))
+print ("Subtraction Output: ", subtraction(inpt1, inpt2))
 print (" ")
-print ("Output: ", doubleEqual(10,20))
+
+# Comparison Operators
+print("For Comparison Operators")
+inpt1 = int(input("Enter first number: "))
+inpt2 = int(input("Enter second number: "))
+
+print (" == Output: ", doubleEqual(inpt1, inpt2))
 print (" ")
-print ("Output: ", notEqual(10,20))
+print (" not equal Output: ", notEqual(inpt1, inpt2))
 print (" ")
-print ("Output: ", addAnd(10,20))
+
+#Assignment Operators
+print("For Assignment Operators")
+inpt1 = int(input("Enter first number: "))
+inpt2 = int(input("Enter second number: "))
+
+print (" += Output: ", addAnd(inpt1, inpt2))
 print (" ")
-print ("Output: ", subtractAnd(10,20))
+print (" -= Output: ", subtractAnd(inpt1, inpt2))
 print (" ")
-print ("Output: ", bitwiseAnd(60,13))
+
+#Bitwise Operators
+print("For Bitwise Operators")
+inpt1 = int(input("Enter first number: "))
+inpt2 = int(input("Enter second number: "))
+
+print (" & Output: ", bitwiseAnd(inpt1, inpt2))
 print (" ")
-print ("Output: ", bitwiseOr(60,13))
+print (" | Output: ", bitwiseOr(inpt1, inpt2))
 print (" ")
-print ("Output: ", logicalAnd(True, False))
+
+#Logical Operators
+print("For Logical Operators")
+inpt1 = input("Enter First True or False: ")
+inpt2 = input("Enter second True or False: ")
+
+inpt1 = checkInput(inpt1)
+inpt2 = checkInput(inpt2)
+print ("logical AND Output: ", logicalAnd(inpt1, inpt2))
 print (" ")
-print ("Output: ", logicalOr(True, False))
+print ("logical OR Output: ", logicalOr(inpt1, inpt2))
 print (" ")
-print ("Output: ", existIn(5, [1,2,3,4,5]))
+
+#Membership Operators
+print ("For Membership Operators")
+a = []
+lstlen = int(input("Length of List: "))
+for i in range(lstlen):
+	inpt1 = int(input("Enter Number: "))
+	a.append(inpt1)
+print(" ")
+inpt2 = int(input("Value to find in list: "))
+
+print ("Membership in List Output: ", existIn(inpt2, a))
 print (" ")
-print ("Output: ", existNotIn(5, [1,2,3,4,5]))
+print ("Membership not in List Output: ", existNotIn(inpt2, a))
 print (" ")
-print ("Output: ", existIs(5, 5))
+
+#Identity Operators
+print("For Identity Operators")
+inpt1 = int(input("Enter first number: "))
+inpt2 = int(input("Enter second number: "))
+
+print ("Identity is Output: ", existIs(inpt1, inpt2))
 print (" ")
-print ("Output: ", existIsNot(5, 5))
+print ("Identity is not Output: ", existIsNot(inpt1, inpt2))

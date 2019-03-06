@@ -44,22 +44,64 @@ def getValueCount(lst, value):
 	return lst.count(value)
 
 
-print ("Output: ", getSpecificValueInList(["hello","world","12","3fouuuuuur"], 2))
+# REGION FUNCTION CALL
+# ------------------------------------------------------------------------
+
+a = []
+lstlen = int(input("Length of List: "))
+for i in range(lstlen):
+	inpt1 = input("Enter Value: ")
+	a.append(inpt1)
+
 print (" ")
-print ("Output: ", getRangeValueInList(["hello","world","12","3fouuuuuur"], 1))
+print ("Get specific value in list")
+inpt1 = int(input("Enter index number: "))
+print ("Output: ", getSpecificValueInList(a, inpt1))
 print (" ")
-print ("Output: ", updateListValues(["hello","world","12","3fouuuuuur"], 2, "ONETWO"))
+
+print ("Get range value in list from start until given index")
+inpt1 = int(input("Enter index number: "))
+print ("Output: ", getRangeValueInList(a, inpt1))
 print (" ")
-print ("Output: ", deleteListValue(["hello","world","12","3fouuuuuur"], 2))
+
+print ("Update value in list on given index and value")
+inpt1 = int(input("Enter index number: "))
+inpt2 = input("Enter value: ")
+print ("Output: ", updateListValues(a, inpt1, inpt2))
 print (" ")
-print ("Output: ", memberOfList(["hello","world","12","3fouuuuuur"], "hello"))
+
+print ("Delete list value on the given index")
+inpt1 = int(input("Enter index number: "))
+print ("Output: ", deleteListValue(a, inpt1))
 print (" ")
-print ("Output: ", getListLength(["hello","world","12","3fouuuuuur"]))
+
+print ("Checks whether given value exist in list")
+inpt1 = input("Enter value: ")
+print ("Output: ", memberOfList(a, inpt1))
 print (" ")
-print ("Output: ", addListMembers(["hello","world","12","3fouuuuuur"], ["098","765","432","123"]))
+
+print ("Count the occurence of a given value on list")
+inpt1 = input("Enter value: ")
+print ("Output: ", getValueCount(a, inpt1))
 print (" ")
-getListValues(["hello","world","12","3fouuuuuur"])
+
+print ("Concat new List Values on Current list")
+b = []
+lstlen = int(input("Length of List: "))
+for i in range(lstlen):
+	inpt1 = input("Enter Value: ")
+	a.append(inpt1)
+
+print ("Output: ", addListMembers(a, b))
 print (" ")
-print ("Output: ", reverseList(["hello","world","12","3fouuuuuur"]))
+
+print ("Pre Given Functions for list")
+getListValues(a)
 print (" ")
-print ("Output: ", getValueCount(["hello","world","hello","3fouuuuuur"], "hello"))
+print ("Reverse a list")
+print ("Output: ", reverseList(a))
+print (" ")
+print ("get the length of given list")
+print ("Output: ", getListLength(a))
+print (" ")
+

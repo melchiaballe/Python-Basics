@@ -1,4 +1,6 @@
+print (" ")
 print ("Decision Making")
+print (" ")
 
 def returnEqual(a,b):
 	print(a ," = ", b)
@@ -76,22 +78,54 @@ def returnIs(a,b):
 	else:
 		return a ,"is not equal to", b
 
-print("Output: ", returnEqual(1,2))
+def checkBoolInput(a):
+	if (a in ['true', 'True']):
+		a = True
+	else:
+		a = False
+
+	return a
+
+
+# REGION FUNCTIONS
+# ---------------------------------------------------------------------- 
+
+print ("Decision Making Values for integer comparison")
+inpt1 = int(input("Enter First Number: "))
+inpt2 = int(input("Enter Second Number: "))
+
+print("Output: ", returnEqual(inpt1,inpt2))
 print(" ")
-print("Output: ", returnNotEqual(1,2))
+print("Output: ", returnNotEqual(inpt1,inpt2))
 print(" ")
-print("Output: ", greaterThan(1,2))
+print("Output: ", greaterThan(inpt1,inpt2))
 print(" ")
-print("Output: ", lessThan(1,2))
+print("Output: ", lessThan(inpt1,inpt2))
 print(" ")
-print("Output: ", greaterThanOrEqual(1,2))
+print("Output: ", greaterThanOrEqual(inpt1,inpt2))
 print(" ")
-print("Output: ", lessThanOrEqual(1,2))
+print("Output: ", lessThanOrEqual(inpt1,inpt2))
 print(" ")
-print("Output: ", returnTrue(True))
+print("Output: ", returnIs(inpt1,inpt2))
 print(" ")
-print("Output: ", returnFalse(True))
+
+print ("Decision Making Value for boolean")
+inpt1 = input("Enter First True or False: ")
+inpt1 = checkBoolInput(inpt1)
+print("Output: ", returnTrue(inpt1))
 print(" ")
-print("Output: ", returnNotIn(2, [1,2,3,4,5]))
+print("Output: ", returnFalse(inpt1))
 print(" ")
-print("Output: ", returnIs(2,2))
+
+print ("Decision Making Value does not exist in list")
+a = []
+lstlen = int(input("Length of List: "))
+for i in range(lstlen):
+	inpt1 = input("Enter List Value: ")
+	a.append(inpt1)
+print(" ")
+inpt2 = input("Value to find in list: ")
+
+print("Output: ", returnNotIn(inpt2, a))
+print(" ")
+

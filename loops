@@ -1,5 +1,6 @@
+print (" ")
 print ("Loops")
-
+print (" ")
 #While Loop
 def incrementWhileLoop (a):
 	print ("While Loop increment values")
@@ -48,13 +49,15 @@ def incrementForLoopContinue (a):
 #Nested While loop
 def nestedWhileLoop(a, b):
 	print ("Nested While Loop")
-	while (a != 5):
-		print(a)
-		while ( b < 5):
-			print ( a * 2 )
-			b += 1
-		a += 1
-		b = 4
+	c = 0
+	d = 0
+	while (c != int(a)):
+		print("First")
+		while ( d < int(b)):
+			print ( "Second" )
+			d += 1
+		c += 1
+		d = 0
 
 def nestedForLoop(a):
 	print ("Nested For Loop Right Triangle")
@@ -77,14 +80,36 @@ def nestedForLoop3(a):
 			print (length ," * ", width)
 			print (length * width)
 
-incrementWhileLoop(0)
-decrementWhileLoop(5)
-incrementWhileLoopBreak(0)
-incrementForLoop(5)
-byCharacterForLoop("HelloWorld")
-incrementForLoopContinue(5)
-nestedWhileLoop(0,4)
-nestedForLoop(5)
-nestedForLoop2(5)
-nestedForLoop3(5)
+print (" ")
+print ("Function for increment and decrement loops")
+inpt1 = int(input("Enter a number: "))
+incrementWhileLoop(inpt1)
+print (" ")
+decrementWhileLoop(inpt1)
+print (" ")
+incrementWhileLoopBreak(inpt1)
+print (" ")
+incrementForLoop(inpt1)
+print (" ")
+incrementForLoopContinue(inpt1)
+print (" ")
+
+print (" ")
+print ("Function for String loops")
+inpt1 = input("Enter a value: ")
+byCharacterForLoop(inpt1)
+
+
+print (" ")
+print ("Function for")
+inpt1 = int(input("Enter a number: "))
+inpt2 = int(input("Enter a number: "))
+nestedWhileLoop(inpt1,inpt2)
+print (" ")
+
+print ("Function for nested loop structures")
+inpt1 = int(input("Enter a number: "))
+nestedForLoop(inpt1)
+nestedForLoop2(inpt1)
+nestedForLoop3(inpt1)
 

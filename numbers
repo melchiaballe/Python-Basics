@@ -1,3 +1,7 @@
+print (" ")
+print ("Numbers")
+print (" ")
+
 def convertStringToInt(a):
 	print ("string a =", a)
 	b = int(a)
@@ -52,14 +56,22 @@ print (floatPow(2,3))
 print (" ")
 print (returnAbsolute(-5.7))
 print (" ")
-print (returnMaxValueInList([1,5,4,7,3]))
-print (" ")
-print (returnMinValueInList([1,5,4,7,3]))
-print (" ")
+
 print (returnRoundedOfNumbers(4.239, 2))
 print (" ")
 print (returnHexadecimal(12))
 print (" ")
 print (returnOctal(12))
+print (" ")
 
+print ("Get Highest and Lowest Value in List")
+a = []
+lstlen = int(input("Length of List: "))
+for i in range(lstlen):
+	inpt1 = int(input("Enter Number: "))
+	a.append(inpt1)
+print (returnMaxValueInList(a))
+print (" ")
+print (returnMinValueInList(a))
+print (" ")
 
