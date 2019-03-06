@@ -51,6 +51,9 @@ class Athlete(Student):
 	def printAthleteAffiliationType(self):
 		print ("Name:", self.name ,"\nYear:", self.year ,"\nSection:", self.section ,"\nAffilitaion:", self.affiliation, "\nSport:", self.sport)
 
+	def printSports(self):
+		print ("I play", self.sport)
+
 class Scholar(Student):
 	def __init__(self, aveGPA, affiliation, name, year, section):
 		self.aveGPA = aveGPA
@@ -61,7 +64,25 @@ class Scholar(Student):
 
 
 stud2 = Athlete("Badminton","Sports", "Momo", "4th Yr", "Abacus")
+print("print parent class using child class Athlete")
 stud2.printStudentDetails()
 print(" ")
 print(" ")
+print("print child class Athlete details")
 stud2.printAthleteAffiliationType()
+print(" ")
+stud2.printSports();
+print(" ")
+print(" ")
+stud3 = Scholar("3.2","ESC Scholar", "Momo", "4th Yr", "Abacus")
+print("print child class Scholar details")
+stud3.printScholarAffiliationType()
+print(" ")
+print(" ")
+print("print parent class using child class Scholar")
+stud3.printStudentDetails()
+
+
+
+
+
