@@ -1,0 +1,55 @@
+# REGION FUNCTIONS
+# --------------------------------------------------
+
+# REGION FOR GETTING AREA
+
+def mainFnc ():
+	checker = True
+	while(checker == True):
+		try:
+			lngth, wdth = getLengthAndWidth()
+		except:
+			checker = excption()
+		else:
+			print("Area: ", getDimension(lngth, wdth))
+		if(checker == True):
+			checker = excption()		
+
+	return
+
+def getDimension(length, width):
+	print ("Length: ", length, " Width: ", width)
+	return (int(length) * int(width))
+
+def getLengthAndWidth():
+	try:
+		lngth = int(input("Length Value: "))
+		wdth = int(input("Width Value: "))
+	except ValueError:
+		print ("Integer Values Only")
+		return
+	else:
+		return lngth, wdth
+
+def checkYesNo (value):
+	if (value in ["y", "Y", "Yes", "yes"]):
+		value = "y"
+	else:
+		value = "n"
+	return value
+
+def excption ():
+	val =  input("Try Again? (y/n) ")
+	val = checkYesNo(val)
+	print (" ")
+	if (val == "y"):
+		mainFnc()
+		return
+	else:
+		return False
+
+
+# REGION FUNCTION CALL
+# --------------------------------------------------------------------------
+
+mainFnc()

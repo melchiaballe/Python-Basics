@@ -1,0 +1,210 @@
+# REGION CLASSES
+#--------------------------------------------------------------------------
+
+class Person():
+	def __init__(self, fName, lName, age, accountType):
+		self.fName = fName
+		self.lName = lName
+		self.age = age
+		self.accountType = accountType
+
+	def returnfName(self):
+		return self.fName
+	def returnlName(self):
+		return self.lName
+	def returnAge(self):
+		return self.age
+	def returnAccountType(self):
+		return self.accountType
+
+class CardHolder(Person):
+
+	def __init__(self, fName, lName, age, accountType, accountNumber, currentBalance):
+		super().__init__(fName, lName, age, accountType)
+		self.accountNumber = accountNumber
+		self.currentBalance = currentBalance
+
+	def printCardHolderDetails(self):
+		print(" ")
+		print(
+			"Card Holder Only: ",
+			"\nFirst Name:", self.fName, 
+			"\nLast Name:", self.lName, 
+			"\nAge: ", self.age,
+			"\nAccount Type: ", self.accountType,
+			"\nAccount Number: ", self.accountNumber, 
+			"\nCurrent Balance: ", self.currentBalance, 
+		)
+		print(" ")
+	
+	def returnAccountNumber(self):
+		return self.accountNumber
+	def returnCurrentBalance(self):
+		return self.currentBalance
+
+	def updateCurrentBalance (self, update):
+		self.currentBalance = update
+		return self.currentBalance
+
+class PassBookHolder(CardHolder):
+
+	def __init__(self, fName, lName, age, accountType, accountNumber, currentBalance, maintainingBalance):
+		super().__init__(fName, lName, age, accountType, accountNumber, currentBalance)
+		self.maintainingBalance = maintainingBalance
+
+	def printPassBookHolderDetails(self):
+		print(" ")
+		print(
+			"PassBook Holder: ",
+			"\nFirst Name:", self.fName, 
+			"\nLast Name:", self.lName, 
+			"\nAge: ", self.age,
+			"\nAccount Type: ", self.accountType,
+			"\nAccount Number: ", self.accountNumber, 
+			"\nCurrent Balance: ", self.currentBalance, 
+			"\nMaintaining Balance: ", self.maintainingBalance
+		)
+		print(" ")
+
+	def returnMaintainingBalance(self):
+		return self.maintainingBalance
+
+# REGION FUNCTION CALLS
+# ------------------------------------------------------------------------------------------
+
+# REGION SET USER
+# ------------------------------------------------------------------------------------------
+def getUser():
+	try:
+		fName = input("First Name: ")
+		lName = input("Last Name: ")
+		age = int(input("Age in Numerical Form: "))
+		accNumber = int(input("Account Number: "))
+		cardType = input("Card Type: (atm/passbook)")
+		currBalance = int(input("Initial Amount: "))
+		cardType = checkCardType(cardType)
+
+	except ValueError:
+		print("invalid input")
+		getUser()
+	else:
+		if (cardType == "passbook"):
+			client = PassBookHolder(fName, lName, age, cardType, accNumber, currBalance, 10000)
+			client.printPassBookHolderDetails()
+		else:
+			client = CardHolder(fName, lName, age, cardType, accNumber, currBalance)
+			client.printCardHolderDetails()
+		return client
+
+def checkCardType(cardType):
+	if(cardType in ["Passbook", "passbook", "pbook"]):
+		cardType = "passbook"
+	elif(cardType in ["ATM", "atm", "Atm"]):
+		cardType = "atm"
+	else:
+		print("invalid input ")
+		cardType = input("Card Type: (atm/passbook)")
+		checkCardType(cardType)
+
+	return cardType
+
+# REGION CHECK VALUE
+# --------------------------------------------------------------------------------------- 
+
+def checkYesNoValue(a):
+	if (a in ['y', 'Y', "Yes", "yes"]):
+		a = "y"
+	else:
+		a = "n"
+	return a
+
+def checkTransType(a):
+	if (a not in [1, 2, 3]):
+		print("INVALID ENTRY")
+		a = int(input("Enter Transaction Type: "))
+		a = checkTransType(a)
+	
+	return a
+
+def checkIntValue():
+	print (" ")
+	try:
+		amount = int(input("Enter amount: "))
+	except:
+		print ("Enter a valid number")
+		checkIntValue
+	else:
+		return amount
+
+# REGION START BANKING PROCESS
+# ------------------------------------------------------------------------------
+
+def startBanking():
+	print (" ")
+	print ("SIMPLE BANKING SYSTEM")	
+	print (" ")
+
+	client = getUser()
+	checker = True	
+	while (checker == True):
+		print(
+			"Transaction Type: ",
+			"\nPress 1 - Balance Inquiry",
+			"\nPress 2 - Deposit",
+			"\nPress 3 - Withdraw"
+		)
+		choice = int(input("Enter Transaction Type: "))
+		choice = checkTransType(choice)
+		
+		executeTransactionType(choice, client)
+
+
+		cont = input("add another transaction? y/n: ")
+		cont = checkYesNoValue(cont)
+		if (cont == "n"):
+			con = input("change user? y/n: ")
+			con = checkYesNoValue(con)
+			if (con == "y"):
+				print(" ")
+				startBanking()
+
+			checker = False
+		else:
+			print(" ")
+
+def executeTransactionType(choice, client):
+	if (choice == 1):
+		checkBalance(client)
+	elif (choice == 2):
+		deposit(client)
+	elif (choice == 3):
+		withdraw(client)
+	return
+	
+def checkBalance(client):
+	print (" ")
+	print ("Balance Inquiry")
+	print ("Name: ", client.returnfName(), client.returnlName())
+	print ("Account Type: ", client.returnAccountType())
+	print ("Remaining Balance: ", client.returnCurrentBalance())
+	print (" ")
+
+def deposit(client):
+	print (" ")
+	print ("Deposit ")
+	amount = checkIntValue()
+	totalamount = client.returnCurrentBalance() + amount
+	totalamount = client.updateCurrentBalance(totalamount)
+	print (totalamount)
+
+def withdraw(client):
+	print (" ")
+	print ("Withdraw ")
+	amount = checkIntValue()
+	totalamount = client.returnCurrentBalance() - amount
+	totalamount = client.updateCurrentBalance(totalamount)
+	print (amount)
+
+# REGION EXECUTE
+# ------------------------------------------------------------------------------
+startBanking()
